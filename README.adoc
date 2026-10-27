@@ -1,0 +1,19 @@
+= A simple demo of archiving an Entity the easy (if sleazy) way
+
+If you want to have "Archived" versions of an entity, the "correct" way
+is to have a separate table and put the archived versions in there.
+This involves copying fields, etc.
+
+A simpler way is to keep both in a single table with a
+discriminator column, and just change the descrimator from "x" to "aArchived"
+using a Native (SQL) Query. That's what this does. And to un-archive?
+Just change the discriminator back!
+
+The Java code was written by a human bean. I mean a Java Bean. No, I mean
+a humane being. Whatever. An AI found a bug or two in it before publication.
+
+== Deploying
+
+You'll have to set up the datasource, in src/main/resources/, copy `persistence.xml.sample`
+to `persistence.xml` and, if you use postgres, just change the db name, user, and password.
+For any other db including sqlite, change the driver too.
