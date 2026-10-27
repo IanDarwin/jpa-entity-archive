@@ -1,13 +1,22 @@
 = A simple demo of archiving an Entity the easy (if sleazy) way
 
-If you want to have "Archived" versions of an entity, the "correct" way
+Sometimes you want to have "Archived" versions of an entity. 
+This arose in the context of a customer/member site,
+where the entries for people who quit got moved into 
+an MemberAchived table, so that we' have a history of when
+and why they left. And if they ever rejoined, could just un-archive them.
+
+The common way suggested to implement this, and the first implementation,
 is to have a separate table and put the archived versions in there.
 This involves copying fields, etc.
 
-A simpler way is to keep both in a single table with a
-discriminator column, and just change the descrimator from "x" to "aArchived"
+A simpler way, demonstrated in this POC project, is to keep 
+both active and archived in a single table with a JPA
+discriminator column, and just change the descriminator from "x" to "xArchived"
 using a Native (SQL) Query. That's what this does. And to un-archive?
 Just change the discriminator back!
+
+There's a bit more to it than that, but this is the essence of the archiving.
 
 The Java code was written by a human bean. I mean a Java Bean. No, I mean
 a humane being. Whatever. An AI found a bug or two in it before publication.
@@ -17,3 +26,4 @@ a humane being. Whatever. An AI found a bug or two in it before publication.
 You'll have to set up the datasource, in src/main/resources/, copy `persistence.xml.sample`
 to `persistence.xml` and, if you use postgres, just change the db name, user, and password.
 For any other db including sqlite, change the driver too.
+I could change it to default to an in-memory database with no need of passwords; pull requests welcome.
