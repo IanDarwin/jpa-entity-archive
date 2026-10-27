@@ -19,7 +19,7 @@ Just change the discriminator back!
 There's a bit more to it than that, but this is the essence of the archiving.
 
 The Java code was written by a human bean. I mean a Java Bean. No, I mean
-a humane being. Whatever. An AI found a bug or two in it before publication.
+a humane being. Whatever. An AI found a bug or two in it during review.
 
 == Deploying
 
