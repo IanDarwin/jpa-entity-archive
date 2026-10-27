@@ -1,5 +1,8 @@
 = A simple demo of archiving an Entity the easy (if sleazy) way
 
+N.B. I am considering merging this into my `jpademo` repository,
+so don't get too hung up on it being in its own repo.
+
 Sometimes you want to have "Archived" versions of an entity. 
 This arose in the context of a customer/member site,
 where the entries for people who quit got moved into 
